@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ส่วนของเนื้อหาหลัก -->
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">แบบฟอร์มแจ้งซ่อม</h1>
+        <form id="repairForm">
+            <div class="mb-3">
+                <label for="fullName" class="form-label">ชื่อ - สกุล</label>
+                <input type="text" class="form-control" id="fullName" required>
+            </div>
+            <div class="mb-3">
+                <label for="phoneNumber" class="form-label">เบอร์โทร</label>
+                <input type="tel" class="form-control" id="phoneNumber" required>
+            </div>
+            <div class="mb-3">
+                <label for="zone" class="form-label">โซน</label>
+                <select class="form-select" id="zone" required>
+                    <option value="" selected disabled>เลือกโซน</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="repairType" class="form-label">ประเภทการซ่อม</label>
+                <select class="form-select" id="repairType" required>
+                    <option value="" selected disabled>เลือกประเภทงานซ่อม</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="details" class="form-label">รายละเอียดงานซ่อม</label>
+                <textarea class="form-control" id="details" rows="3" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="imageUpload" class="form-label">อัพโหลดรูปภาพ</label>
+                <input type="file" class="form-control" id="imageUpload" accept="image/*" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">ความสำคัญของงาน</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="urgency" id="notUrgent" value="🟢 ไม่เร่งด่วน" required>
+                    <label class="form-check-label" for="notUrgent">🟢 ไม่เร่งด่วน</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="urgency" id="normal" value="🟡 ปกติ">
+                    <label class="form-check-label" for="normal">🟡 ปกติ</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="urgency" id="urgent" value="🔴 เร่งด่วน">
+                    <label class="form-check-label" for="urgent">🔴 เร่งด่วน</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+    </div>
+
+    <!-- ล็อคหน้าจอที่จะแสดงเมื่อไม่มี user_id -->
+    <div id="lockScreen" class="lock-screen">
+        <div class="message">
+            <h2>คุณต้องมี user_id เพื่อใช้งานเว็บไซต์นี้</h2>
+            <p>กรุณาตรวจสอบ URL ของคุณ</p>
+        </div>
+    </div>
+
+    <script type="module" src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+</body>
+</html>

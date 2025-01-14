@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบแจ้งซ่อม - การอนุมัติ</title>
+  <link rel="stylesheet" href="styles_boss.css">
+</head>
+<body>
+  <div class="container">
+    <h1>ระบบแจ้งซ่อม</h1>
+
+    <!-- ฟอร์มสำหรับการอนุมัติ -->
+    <form id="approval-form">
+      <!-- ชื่อผู้อนุมัติ -->
+      <div class="form-group">
+        <label for="approver-name">ชื่อผู้อนุมัติ:</label>
+        <input type="text" id="approver-name" name="approver-name" placeholder="กรอกชื่อผู้อนุมัติ" required>
+      </div>
+
+      <!-- สถานะการอนุมัติ -->
+      <div class="form-group">
+        <label>สถานะการอนุมัติ:</label>
+        <label><input type="radio" name="boss_status" value="ผจกอนุมัติ" required> อนุมัติ</label>
+        <label><input type="radio" name="boss_status" value="ผจกไม่อนุมัติ" required> ไม่อนุมัติ</label>
+      </div>
+
+      <!-- เหตุผลเมื่อไม่อนุมัติ -->
+      <div class="form-group hidden" id="reason-group">
+        <label for="reason">เหตุผล:</label>
+        <textarea id="reason" name="reason" rows="3" placeholder="กรอกเหตุผลที่ไม่อนุมัติ"></textarea>
+      </div>
+
+      <!-- ปุ่มส่งฟอร์ม -->
+      <button type="submit">ส่งข้อมูล</button>
+    </form>
+
+    <!-- ล็อคหน้าจอที่จะแสดงเมื่อไม่มี user_id -->
+    <div id="lockScreen" class="lock-screen">
+        <div class="message">
+            <h2>คุณต้องมี user_id เพื่อใช้งานเว็บไซต์นี้</h2>
+            <p>กรุณาตรวจสอบ URL ของคุณ</p>
+        </div>
+    </div>
+
+  <script type="module" src="script_boss.js"></script>
+</body>
+</html>

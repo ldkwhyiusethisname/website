@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายละเอียดงาน</title>
+    <link rel="stylesheet" href="styles_job.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="job-title">รายละเอียดงาน</h1>
+        <div class="job-details">
+            <p><strong>โซน:</strong> <span id="job-zone"></span></p>
+            <p><strong>รายละเอียด:</strong> <span id="job-description"></span></p>
+            <p><strong>สถานะปัจจุบัน:</strong> <span id="job-status"></span></p>
+            <div id="job-image"></div>
+        </div>
+        <form id="status-form">
+            <label for="status">เปลี่ยนสถานะ:</label>
+            <select id="status" required>
+                <option value="รอดำเนินการ">รอดำเนินการ</option>
+                <option value="กำลังทำ">กำลังทำ</option>
+                <option value="ซ่อมเสร็จ">ซ่อมเสร็จ</option>
+            </select>
+        </form>
+        <!-- ฟอร์มเพิ่มเติม -->
+        <div id="additional-info">
+            <label for="repair-reason">สาเหตุการซ่อม:</label>
+            <textarea id="repair-reason" rows="4" placeholder="กรุณากรอกสาเหตุการซ่อม"></textarea required>
+            <label for="repair-image">อัปโหลดรูปที่ซ่อมเสร็จแล้ว:</label>
+            <input type="file" id="repair-image" accept="image/*" required>
+        </div>
+        <!-- ปุ่มยืนยัน -->
+        <div class="confirm-container">
+            <button type="submit" id="confirm-button">ยืนยัน</button>
+        </div>
+    </div>
+    
+    <!-- ล็อคหน้าจอที่จะแสดงเมื่อไม่มี user_id -->
+    <div id="lockScreen" class="lock-screen">
+        <div class="message">
+            <h2>คุณต้องมี user_id เพื่อใช้งานเว็บไซต์นี้</h2>
+            <p>กรุณาตรวจสอบ URL ของคุณ</p>
+        </div>
+    </div>
+
+    <script  type="module" src="script_job.js"></script>
+</body>
+</html>

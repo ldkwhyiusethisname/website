@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em; /* ขนาดหัวข้อใหญ่ขึ้น */
+    color: #007bff;
+}
+
+.job-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center; /* จัดการให้ทุกการ์ดอยู่กลางกริด */
+}
+
+.job-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding-bottom: 15px;
+    width: 100%;
+    max-width: 600px; /* กำหนดขนาดสูงสุดให้การ์ด */
+    box-sizing: border-box;
+}
+
+.job-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background: #f0f0f0;
+}
+
+.job-info {
+    padding: 15px;
+}
+
+.job-info h3 {
+    margin: 0 0 10px;
+    font-size: 1.5em; /* ขนาดหัวข้อใหญ่ขึ้น */
+    color: #007bff;
+}
+
+.job-info p {
+    margin: 5px 0;
+    font-size: 1.2em; /* ข้อความใหญ่ขึ้น */
+    line-height: 1.5;
+}
+
+.status {
+    font-weight: bold;
+    color: #d9534f;
+    font-size: 1.3em; /* ขนาดสถานะใหญ่ขึ้น */
+}
+
+.job-card button {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.job-card button:hover {
+    background-color: #0056b3;
+}
+
+/* ปรับการแสดงผลกริดเมื่อมี 1 รายการ */
+@media (max-width: 1024px) {
+    .job-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* สำหรับข้อมูลหลายรายการ */
+    }
+
+    .job-container:only-child {
+        grid-template-columns: 1fr;
+    }
+
+    /* ปรับขนาดการ์ดในกรณีที่มี 1 รายการ */
+    .job-container:only-child .job-card {
+        max-width: 600px; /* จำกัดขนาดการ์ดให้พอดี */
+        margin: 0 auto; /* จัดกลางการ์ด */
+    }
+
+    h1 {
+        font-size: 1.8em; /* ลดขนาดหัวข้อ */
+    }
+
+    .job-info h3 {
+        font-size: 1.3em; /* ลดขนาดหัวข้อในการ์ด */
+    }
+
+    .job-info p {
+        font-size: 1.1em; /* ลดขนาดข้อความ */
+    }
+
+    .status {
+        font-size: 1.2em; /* ลดขนาดสถานะ */
+    }
+
+    .job-card button {
+        padding: 8px 12px; /* ปรับขนาดปุ่ม */
+    }
+}
+
+/* Media Query สำหรับโทรศัพท์มือถือ */
+@media (max-width: 768px) {
+    .job-container {
+        grid-template-columns: 1fr; /* ใช้ 1 คอลัมน์ในโทรศัพท์ */
+    }
+
+    .container {
+        padding: 10px; /* ปรับระยะห่างสำหรับโทรศัพท์ */
+    }
+
+    h1 {
+        font-size: 1.6em; /* ลดขนาดหัวข้อสำหรับโทรศัพท์ */
+    }
+
+    .job-info h3 {
+        font-size: 1.2em; /* ลดขนาดหัวข้อในการ์ด */
+    }
+
+    .job-info p {
+        font-size: 1em; /* ลดขนาดข้อความ */
+    }
+
+    .status {
+        font-size: 1.1em; /* ลดขนาดสถานะ */
+    }
+
+    .job-card button {
+        padding: 8px 12px; /* ลดขนาดปุ่ม */
+        font-size: 0.9em; /* ปรับขนาดฟอนต์ของปุ่ม */
+    }
+}

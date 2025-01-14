@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* เลย์เอาต์สำหรับล็อคหน้าจอ */
+.lock-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* พื้นหลังครึ่งมืด */
+    display: none; /* ซ่อนโดยเริ่มต้น */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: white;
+}
+
+.message {
+    text-align: center;
+    background-color: #343a40;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.job-details {
+    margin-bottom: 20px;
+}
+
+#job-image img {
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label, select, button {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+/* ปรับปรุงเพิ่มเติมสำหรับฟอร์มเพิ่มเติม */
+#additional-info {
+    display: none; /* เริ่มต้นซ่อน */
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa; /* สีพื้นหลังอ่อน */
+    border: 1px solid #ddd; /* เส้นขอบ */
+    border-radius: 5px; /* ขอบโค้งมน */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+}
+
+#additional-info label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#additional-info textarea {
+    width: 100%; /* ขยายเต็มพื้นที่ */
+    height: auto; /* ใช้ระบบปรับขนาดเอง */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: none; /* ปิดการปรับขนาด */
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+#additional-info input[type="file"] {
+    width: 100%; /* ทำให้ปุ่มอัปโหลดอยู่ในกรอบ */
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#additional-info button {
+    padding: 10px;
+    background-color: #28a745; /* สีเขียว */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#additional-info button:hover {
+    background-color: #218838;
+}
+
+
+.confirm-container {
+    margin-top: 20px; /* เพิ่มระยะห่างจากส่วนก่อนหน้า */
+    text-align: center; /* จัดปุ่มไว้ขวา */
+}
+
+#confirm-button {
+    width:70%;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#confirm-button:hover {
+    background-color: #0056b3;
+}

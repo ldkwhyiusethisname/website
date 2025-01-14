@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles_form.css"> <!-- ใช้ไฟล์ CSS ของคุณเอง -->
+    <title>แบบฟอร์มเบิกงบประมาณ</title>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">แบบฟอร์มเบิกงบประมาณ</h1>
+    <form id="repairForm">
+        <div class="mb-3">
+            <label class="form-label">สถานะการซ่อม</label>
+            <div>
+                <input type="radio" id="canRepair" name="repairStatus" value="canRepair" required>
+                <label for="canRepair">ซ่อมได้</label>
+            </div>
+            <div>
+                <input type="radio" id="cannotRepair" name="repairStatus" value="cannotRepair" required>
+                <label for="cannotRepair">ซ่อมไม่ได้</label>
+            </div>
+        </div>
+
+        <!-- ส่วนสำหรับ "ซ่อมได้" -->
+        <div id="repairDetails" class="d-none">
+            <div class="mb-3">
+                <label for="description" class="form-label">รายละเอียดการซ่อม</label>
+                <textarea id="description" name="description" class="form-control" rows="4" placeholder="กรอกรายละเอียดการซ่อม"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="materials" class="form-label">รายการวัสดุที่ใช้</label>
+                <textarea id="materials" name="materials" class="form-control" rows="4" placeholder="กรอกรายการวัสดุที่ใช้ในการซ่อม"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="estimated_cost" class="form-label">ประมาณการค่าใช้จ่าย (บาท)</label>
+                <input type="number" id="estimated_cost" name="estimated_cost" class="form-control" placeholder="กรอกประมาณการค่าใช้จ่าย" min="0">
+            </div>
+        </div>
+
+        <!-- ส่วนสำหรับ "ซ่อมไม่ได้" -->
+        <div id="noRepairDetails" class="d-none">
+            <div class="mb-3">
+                <label for="reason" class="form-label">เหตุผลที่ซ่อมไม่ได้</label>
+                <textarea id="reason" name="reason" class="form-control" rows="4" placeholder="กรอกเหตุผลที่ซ่อมไม่ได้"></textarea>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">ส่งข้อมูล</button>
+    </form>
+    <!-- ล็อคหน้าจอที่จะแสดงเมื่อไม่มี user_id -->
+    <div id="lockScreen" class="lock-screen">
+        <div class="message">
+            <h2>คุณต้องมี user_id เพื่อใช้งานเว็บไซต์นี้</h2>
+            <p>กรุณาตรวจสอบ URL ของคุณ</p>
+        </div>
+    </div>
+</div>
+
+<!-- ลิงก์ไปยัง Bootstrap JS และ Popper -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script type="module" src="script_form.js"></script>
+</body>
+</html>
